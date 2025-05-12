@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --Darkshadow: #33333367;
+    --blue: #3c31dd;
+    --dark: #282828;
+    --anotherdark: #333;
+    --light: #fff;
+    --lightDescription: #ffffffb4;
+    --cardcolor: #eee9e9;
+    --cardcolorDark: #6c6a6a;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+/*DARK THEME*/
+.darkMode {
+    color: var(--light) !important;
+    background-color: var(--anotherdark) !important;
+}
+.darkCard {
+    background-color: var(--cardcolorDark) !important; 
+    color: var(--light) !important;
+}
+.darkCard:hover {
+    background-color: var(--Darkshadow) !important; 
+    color: var(--light) !important;
+}
+.darkTitle {
+    color: var(--light) !important;
+}
+.darkButton {
+    color: var(--light) !important;
+    background-color: var(--anotherdark) !important;
+}
+.darkButton:hover {
+    box-shadow: 0px 2px 5px var(--lightDescription);
+}
+.darkLink {
+    color:#7f77ee;
+}
+
+/* START OF HEADER STYLE */
+.linksHeader {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.linksHeader a {
+    margin-right: 10px;
+    background-color: var(--cardcolor);
+    border-radius: 25px;
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--dark);
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.linksHeader a:hover {
+    transform: translateY(5px);
+    background-color: var(--cardcolorDark);
+    color: white;
+}
+/* END OF HEADER SYTLE */
+
+.mainContent {
+    justify-self: center;
+    margin-top: 10px;
+}
+
+/*START OF PROFILE-MainContent STYLE */
+.perfil {
+    margin-top: 25px;
+    justify-items: center;
+    color: var(--dark);
+}
+.perfil img {
+    border-radius: 35px;
+    width: 180px;
+}
+.activities {
+    margin-top: 20px;
+    color: var(--anotherdark);
+    font-size: 14px;
+    justify-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.linksBar {
+    margin-top: 35px;
+}
+
+.linkCard {
+    margin-top: 15px;
+    display: block;
+    justify-self: center;
+    background-color: var(--cardcolor);
+    padding: 10px;
+    border-radius: 10px;
+    width: 120%;
+    text-align: center;
+    text-decoration: none;
+    color: var(--anotherdark);
+    transition: border 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.linkCard h1 {
+    font-size: 20px;
+}
+.linkCard p {
+    font-size: 12px;
+}
+
+.linkCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 2px 5px var(--Darkshadow);
+    border: 1px solid var(--Darkshadow) !important;
+}
+
+.footerMain {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    justify-self: center;
+    padding: 10px;
+}
+
+.footerMain a {
+    font-size: 22px;
+    margin-right: 10px;
+    transition: font-size 0.2s;
+    color: var(--anotherdark);
+}
+
+.footerMain a:hover {
+    cursor: pointer;
+    font-size: 28px;
+} 
+
+#meuBotao {
+    position: absolute;
+    right: 15vw;
+    top: 10vw;
+    border-radius: 25px;
+    border: none;
+    padding: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#meuBotao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 2px 5px var(--Darkshadow);
+    cursor: pointer;
+}
+
+.GenesysCard, .GenesysCard .DarkCard {
+    color: var(--lightDescription);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+    0 0 20px rgba(255, 255, 255, 0.6), 
+    0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.estrelar {
+    background-color: #001f3d !important; 
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    animation: mover-estrelas 10s linear infinite; 
+} 
+
+.estrelar:hover {
+    background-color: #001f3d !important; 
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 
+    0 0 10px rgba(255, 255, 255, 0.6), 
+    0 0 20px rgba(255, 255, 255, 0.4);
+}
+  
+  @keyframes mover-estrelas {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+
+@media(max-width: 600px) {
+    .linkCard {
+        width: 80%;
+    }
+    #meuBotao {
+        right: 2vw !important;
+        top: 30vw !important;
+        width: 80px;
+    }
+}

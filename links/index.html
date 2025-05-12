@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/icons/image-anime.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>lemos.dev</title>
+</head>
+<body>
+    <div class="linksHeader">
+        <a href="">WebSite</a>
+        <a href="">Blog</a>
+        <a href="" target="_blank">Projetos</a>
+    </div>
+    <button href="" id="meuBotao" target="_blank">Modo Escuro</button>
+    <div class="mainContent">
+        <div class="perfil">
+            <img alt="imagePerfil" src="https://github.com/gabelemos.png">
+            <h1>Gabriel Lemos</h1>
+            <p><i>@lemoosdev</i></p>
+            <div class="activities">
+                <h3>👨‍💻 Desenvolvedor na <a target="_blank" href="https://www.linkedin.com/company/smart-system-br/posts/?feedView=all">@Smart System</a></h3>
+                <h3>💭 Campeão do Dell Innovation Camp 2024</h3>
+                <h3>💡 Crio conteúdos sobre programação e Tecnologia!</h3>
+            </div>
+            <div class="linksBar">
+                <a class="linkCard GenesysCard estrelar" href="">
+                    <h1>ROXO STORE</h1>
+                    <p>Vista a blusa do seu time de E-Sports</p>
+                    <!--<p>👕 Vista a blusa do seu time de E-Sports 👨🏻‍💻</p>-->
+                </a>
+                <hr style="margin-top: 20px;">
+                <a class="linkCard" href="">
+                    <h1>Conteúdos básicos sobre Criação de Jogos!</h1>
+                    <p>E-Book gratuito sobre criação de Jogos sem códigos!</p>
+                </a>
+                <a class="linkCard" href="">
+                    <h1>Como criar jogos sem códigos e 100% grátis</h1>
+                    <p>Aprenda a criar um jogos 2D em até um dia</p>
+                </a>
+                <a class="linkCard" href="">
+                    <h1>Aprenda os atalhos do "No-Code"</h1>
+                    <p>E-Book gratuito sobre criação de apps sem código</p>
+                </a>
+                <a class="linkCard" href="">
+                    <h1>No-Code do Zero ao App</h1>
+                    <p>Aprenda a criar um aplicativo 100% funcional sem uma linha de código!</p>
+                </a>
+            </div>
+            <div class="footerMain">
+                <a class="" href="https://github.com/gabelemos"><i class="fa-brands fa-github-alt"></i></a>
+                <a class="" href="https://instagram.com/lemoosdev"><i class="fa-brands fa-instagram"></i></a>
+                <a class="" href="mailto:olemosdev@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                <a class="" href=""><i class="fa-brands fa-youtube"></i></a>
+                <a class="" href="https://www.linkedin.com/in/gabelemos"><i class="fa-brands fa-linkedin"></i></a>
+                <a class="" href=""><i class="fa-solid fa-globe"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    //document.querySelectorAll('.perfil img[alt="imagePerfil"]').addEventListener('mouseover', function() {
+    //  this.src = '/icons/android-chrome-512x512.png';
+    //});
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById("meuBotao").addEventListener("click", function() {
+        console.log("Ligando modo noturno...")
+        document.getElementById("meuBotao").classList.toggle("darkButton");
+        
+        document.body.classList.toggle("darkMode");
+        
+        //links
+        const cardslinks = document.querySelectorAll('.linkCard');
+        const headerLinks = document.querySelectorAll('.linksHeader a');
+        const perfis = document.querySelector('.perfil');
+        const activitiesT = document.querySelector('.activities');
+        const linksfooter = document.querySelectorAll('.footerMain a');
+        const linkActivity = document.querySelector('.activities a');
+    
+        for (let i = 0; i < cardslinks.length; i++) {
+            if (!cardslinks[i].classList.contains("darkCard")) {
+                cardslinks[i].classList.add("darkCard");
+                perfis.classList.add("darkTitle");
+                linkActivity.classList.add("darkLink");
+                activitiesT.classList.add("darkTitle");
+            } else { 
+                cardslinks[i].classList.remove("darkCard");
+                perfis.classList.remove("darkTitle");
+                linkActivity.classList.remove("darkLink");
+                activitiesT.classList.remove("darkTitle");
+            }
+        }
+        
+        for (let i = 0; i < linksfooter.length; i++) {
+            if (!linksfooter[i].classList.contains("darkTitle")) {
+                linksfooter[i].classList.add("darkTitle");
+            } else {
+                linksfooter[i].classList.remove("darkTitle");
+            }
+        }
+
+        for (let i = 0; i < headerLinks.length; i++) {
+            if (!headerLinks[i].classList.contains("darkCard")) {
+                headerLinks[i].classList.add("darkCard");
+            } else {
+                headerLinks[i].classList.remove("darkCard");
+            }
+        }
+    });
+});
+</script>
+</html>

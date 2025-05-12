@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="/img/image-anime.png">
+    <title>Gabriel Lemos</title>
+</head>
+<body id="background" class="gradient-background nightback">
+    <div class="menuOptions">
+        <div id="openMenu" style="z-index: 11;" class="changeMode closed">
+            <i class="fa-solid fa-ellipsis"></i>
+        </div>
+        <div id="changeMode" class="changeMode night">
+            <i id="changeModeIcon" class="fa-solid fa-link"></i>
+        </div>
+        <div id="changeScrollUp" class="changeMode">
+            <i class="fa-solid fa-up-long"></i>
+        </div>
+        <div id="changeScrollDown" class="changeMode">
+            <i class="fa-solid fa-down-long"></i>
+        </div>
+    </div>
+
+    <div class="containerName">
+        <h1 class="msg">Olá! Seja bem vindo!</h1>
+    </div>
+
+<section id="aboutme">
+    <div class="containerInfo">
+        <h1>Gabriel Lemos</h1>
+        <p>"🌊 | I did it my way"</p>
+        <div class="containerMyInfos">
+            <div class="containerBoxInfos">
+                <h2>Quem sou eu?</h2>
+                <p> 👨🏻‍💻 Oi! Eu me chamo Gabriel Lemos e atuo na área de tecnologia como Programador à 4 anos.</p>
+                <p> 👨🏻‍🏫 Tenho como objetivo ajudar a comunidade de desenvolvimento, principalmente inciantes.</p>
+                <p> 🗻 Vivendo e aprendendo, sempre compartilhando conhecimento!</p>
+            </div>
+            <img src="/img/image-anime.png">
+        </div>
+        <hr style="margin-top: 25px;border-radius: 25px;width: 70%;justify-self: center;">
+        <div style="width: 90%; justify-self: center;" class="containerBoxInfos">
+            <h1>Outras</h1>
+        </div>
+    </div>
+</section>
+
+<section id="myProjects">
+    <div class="containerProjects">
+        <h1>Meus Projetos</h1>
+        <div class="scrollingProjects">
+            <div class="itensProject">Gerador de Carteirinha</div>  
+            <div class="itensProject">Calculador de Média</div>  
+            <div class="itensProject">Bot para Shopee</div>  
+            <div class="itensProject">Segurança Digital</div>  
+            <div class="itensProject">Apps em 1 Dia</div> 
+            
+            <div class="itensProject">Gerador de Carteirinha</div>  
+            <div class="itensProject">Calculador de Média</div>  
+            <div class="itensProject">Bot para Shopee</div>  
+            <div class="itensProject">Segurança Digital</div>  
+            <div class="itensProject">Apps em 1 Dia</div> 
+        </div>
+    </div>
+</section>e
+    <p class="footerP">Created by Lemos. ツ</p>
+</body>
+<script>
+    const openMenu = document.getElementById('openMenu')
+    const changeMode = document.getElementById('changeMode')
+    const changeScrollUp = document.getElementById('changeScrollUp')
+    const changeScrollDown = document.getElementById('changeScrollDown')
+    
+    const background = document.getElementById('background')
+    const changeModeIcon = document.getElementById('changeModeIcon')
+
+    //Abrindo Menu
+    openMenu.addEventListener('click', function() {
+        if (openMenu.className.includes('closed')) {
+            changeMode.style.transform = 'translateY(60px)'
+            changeScrollDown.style.transform = 'translateX(78px)'
+            changeScrollUp.style.transform = 'translateX(-80px)'
+            openMenu.classList.remove('closed')
+            openMenu.classList.add('opened')
+        } else { //Fechando Menu
+            changeMode.style.transform = 'translateY(0px)'
+            changeScrollDown.style.transform = 'translateX(0px)'
+            changeScrollUp.style.transform = 'translateX(0px)'
+            console.log('Fechando menu!')
+            openMenu.classList.add('closed')
+            openMenu.classList.remove('opened')
+        }
+    })
+    
+    //Animação Mode
+    changeMode.addEventListener('mouseover', function() {
+        changeModeIcon.classList.add('bx-tada')
+    });
+    
+    changeMode.addEventListener('mouseout', function() {
+        changeModeIcon.classList.remove('bx-tada')
+    });
+    
+    changeMode.addEventListener('click', function() {
+        window.open('http://www.google.com.br','_blank');
+    });
+
+//----------------------------------------------
+//const changeScrollUp = document.getElementById('changeScrollUp')
+//const changeScrollDown = document.getElementById('changeScrollDown')
+
+let scrollphase = ''
+
+changeScrollDown.addEventListener('click', function() {
+    if (scrollphase == '') {
+        window.scrollTo({
+          top: 600,
+          behavior: 'smooth'
+        });
+        scrollphase = 'aboutme'
+    } else if (scrollphase == 'aboutme') {
+        window.scrollTo({
+            top: 1200,
+            behavior: 'smooth'
+        });
+        scrollphase = 'myprojects'
+    }
+});
+
+changeScrollUp.addEventListener('click', function() {
+    if (scrollphase == 'aboutme') {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        scrollphase = ''
+    } else if (scrollphase == 'myprojects') {
+        window.scrollTo({
+            top: 600,
+            behavior: 'smooth'
+        });
+        scrollphase = 'aboutme'
+    }
+})
+</script>
+</html>
